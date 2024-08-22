@@ -1,0 +1,4 @@
+Original FD write.
+dup FD write.
+dup2 FD write.
+fcntl FD write.

@@ -1,0 +1,7 @@
+#include<stdio.h>
+#include<unistd.c>
+
+int main(){
+symlink("file","softl")
+}
+

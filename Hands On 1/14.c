@@ -1,44 +1,49 @@
+/*
+Parv Ketanbhai Gatecha
+MT2024108
+
+14 Write a program to find the type of a file.
+a. Input should be taken from command line.
+b. program should be able to identify any type of a file.
+*/
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <time.h>
 #include <stdio.h>
-#include <sys/stat.h>   // for stat() and struct stat
-#include <stdlib.h>     // for exit()
-#include <unistd.h>     // for lstat()
+#include <stdlib.h>
+#include <sys/sysmacros.h>
+#include <fcntl.h>
+int main(int argv, char *argc[])
+{
+    struct stat s;
+    int o = lstat(argc[1], &s);
+    printf("File type:                ");
 
-void print_file_type(const struct stat *fileStat) {
-    if (S_ISREG(fileStat->st_mode)) {
-        printf("This is a regular file.\n");
-    } else if (S_ISDIR(fileStat->st_mode)) {
-        printf("This is a directory.\n");
-    } else if (S_ISLNK(fileStat->st_mode)) {
-        printf("This is a symbolic link.\n");
-    } else if (S_ISCHR(fileStat->st_mode)) {
-        printf("This is a character device.\n");
-    } else if (S_ISBLK(fileStat->st_mode)) {
-        printf("This is a block device.\n");
-    } else if (S_ISFIFO(fileStat->st_mode)) {
-        printf("This is a FIFO (named pipe).\n");
-    } else if (S_ISSOCK(fileStat->st_mode)) {
-        printf("This is a socket.\n");
-    } else {
-        printf("Unknown file type.\n");
+    switch (s.st_mode & S_IFMT)
+    {
+    case S_IFBLK:
+        printf("block device\n");
+        break;
+    case S_IFCHR:
+        printf("character device\n");
+        break;
+    case S_IFDIR:
+        printf("directory\n");
+        break;
+    case S_IFIFO:
+        printf("FIFO/pipe\n");
+        break;
+    case S_IFLNK:
+        printf("symlink\n");
+        break;
+    case S_IFREG:
+        printf("regular file\n");
+        break;
+    case S_IFSOCK:
+        printf("socket\n");
+        break;
+    default:
+        printf("unknown?\n");
+        break;
     }
-}
-
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <file_path>\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
-
-    struct stat fileStat;
-
-    // Get file statistics using lstat() to handle symbolic links properly
-    if (lstat(argv[1], &fileStat) == -1) {
-        perror("Error determining file type");
-        exit(EXIT_FAILURE);
-    }
-
-    // Print file type
-    print_file_type(&fileStat);
-
-    return 0;
 }

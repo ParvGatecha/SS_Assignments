@@ -1,3 +1,10 @@
+/*
+Parv Ketanbhai Gatecha
+MT2024108
+
+6. Write a program to take input from STDIN and display on STDOUT. Use only read/write system calls
+*/
+
 #include <unistd.h>
 #include <stdio.h>
 

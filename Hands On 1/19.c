@@ -2,9 +2,7 @@
 Parv Ketanbhai Gatecha
 MT2024108
 
-16. Write a program to perform mandatory locking.
-a. Implement write lock
-b. Implement read lock
+19. Write a program to find out time taken to execute getpid system call. Use time stamp counter.
 */
 
 #include <stdio.h>
@@ -26,3 +24,7 @@ void main()
     end = rdtsc();
     printf("Difference is : %llu\n", end - start);
 }
+/*
+Process id: 16258
+Difference is : 99690
+*/

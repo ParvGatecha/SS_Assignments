@@ -33,3 +33,7 @@ int main(int argv, char *argc[])
     }
     return 0;
 }
+
+/*
+O_RDONLY
+*/

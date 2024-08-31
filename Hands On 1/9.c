@@ -42,3 +42,17 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+/*
+File: 10txt.txt
+Inode: 8019427
+Number of hard links: 1
+UID: 1000
+GID: 1000
+Size: 30 bytes
+Block size: 4096 bytes
+Number of blocks: 8
+Time of last access: Thu Aug 22 09:13:02 2024
+Time of last modification: Fri Aug  9 21:27:41 2024
+Time of last change: Thu Aug 22 09:11:50 2024
+*/

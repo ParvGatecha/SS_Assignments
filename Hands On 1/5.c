@@ -36,3 +36,11 @@ int main() {
 
     return 0;
 }
+
+/*
+File descriptor for '1txt.txt': 3
+File descriptor for '2txt.txt': 4
+File descriptor for '3txt.txt': 5
+File descriptor for '4txt.txt': 6
+File descriptor for '5txt.txt': 7
+*/

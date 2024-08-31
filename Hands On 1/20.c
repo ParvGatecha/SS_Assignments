@@ -23,3 +23,7 @@ void main(int argc, char *argv[])
         printf("New priority: %d\n", priority);
     }
 }
+/*
+Current priority: 0
+New priority: 5
+*/

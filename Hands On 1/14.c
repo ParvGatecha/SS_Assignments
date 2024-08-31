@@ -47,3 +47,7 @@ int main(int argv, char *argc[])
         break;
     }
 }
+
+/*
+File type:                directory
+*/

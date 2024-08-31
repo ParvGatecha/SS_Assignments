@@ -2,9 +2,10 @@
 Parv Ketanbhai Gatecha
 MT2024108
 
-16. Write a program to perform mandatory locking.
-a. Implement write lock
-b. Implement read lock
+17. Write a program to simulate online ticket reservation. Implement write lock
+Write a program to open a file, store a ticket number and exit. Write a separate program, to
+open the file, implement write lock, read the ticket number, increment the number and print
+the new ticket number then close the file.
 */
 
 #include <stdio.h>
@@ -16,7 +17,7 @@ b. Implement read lock
 #include <stdlib.h>
 int main(int argc, char *argv[])
 {
-    int fd = open("~/Desktop/SS/labexercise/17_ticket.txt", O_RDWR);
+    int fd = open("17txt.txt", O_RDWR);
     struct flock l = {F_WRLCK, SEEK_SET, 0, 0, 0};
     fcntl(fd, F_SETLKW, &l);
     printf("File is locked\n");
@@ -39,3 +40,11 @@ int main(int argc, char *argv[])
     printf("file is unlocked\n");
     return 0;
 }
+
+/*
+File is locked
+6	 
+
+file is unlocked
+
+*/

@@ -20,3 +20,6 @@ int main() {
     }
     return 0;
 }
+/*
+Hard link created successfully.
+*/

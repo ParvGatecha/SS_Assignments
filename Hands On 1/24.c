@@ -13,7 +13,7 @@ int main(){
     pid=fork();
     if(pid==0){
         // inside child process as pid will be 0.
-        //sleep child untill parent finish its execution.
+        //sleep child until parent finish its execution.
         sleep(30);
         printf("inside child pid= %d\n", getpid());
         printf("parent id= %d\n", getppid()); // as parent terminated we can't get parent id in child process so we will get different value;
@@ -25,3 +25,11 @@ int main(){
     }
     return 0;
 }
+
+/*
+1$ cc 24.c && ./a.out
+inside parent pid= 19028
+child pid= 19029
+parv@parv-ASUS-TUF-Gaming-A15-FA506IH-FA506IH:~/Desktop/SS/labexercise/Hands On 1$ inside child pid= 19029
+parent id= 2123
+*/

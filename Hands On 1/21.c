@@ -14,3 +14,8 @@ int main()
     if(cid) printf("child process id = %d\n", cid);
     return 0;
 }
+
+/*
+parent process id = 18540
+child process id = 18541
+*/

@@ -31,3 +31,7 @@ void main()
         printf("Data entered");
     }
 }
+
+/*
+Data Entered
+*/

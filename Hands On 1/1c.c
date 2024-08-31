@@ -21,3 +21,9 @@ int main() {
     }
     return 0;
 }
+/*
+FIFO created successfully.
+*/
+/*
+mknod: File exists
+*/

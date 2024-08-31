@@ -25,9 +25,19 @@ int main()
         // for that we are using sleep() fun call in parent;
         // to check use zombie process use ps -l or top -b -n1 -u $USER cmd in terminal after child is exec............................................uted and
 
-        sleep(300);
+        sleep(10);
         printf("inside parent pid= %d\n", getpid());
         printf("child pid= %d\n", fd);
     }
     return 0;
 }
+
+/*
+inside child pid= 18927
+parent id= 18926
+
+(after 10 seconds)
+
+inside parent pid= 18926
+child pid= 18927
+*/

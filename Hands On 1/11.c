@@ -22,5 +22,4 @@ int main(int argv,char *argc[]){
 	int d3 = fcntl(fd, F_DUPFD, 5);//assigne fd greater than or equal to 5 
 	write(d3,"Hi, USER written using fcntl() file descriptor\n",49);
 	return 0;
-
 }

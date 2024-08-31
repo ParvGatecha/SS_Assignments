@@ -24,3 +24,7 @@ int main(){
 
 	return 0;
 }
+
+/*
+File descriptor value for 3txt.txt: 3
+*/

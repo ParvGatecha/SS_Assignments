@@ -11,6 +11,7 @@ b. Implement read lock
 #include <fcntl.h>     // Import for `fcntl`, `open`
 #include <sys/types.h> // Import for `open`
 #include <sys/stat.h>  // Import for `open`
+#include <stdio.h>
 
 void main(int argc, char *argv[])
 {
@@ -55,3 +56,7 @@ void main(int argc, char *argv[])
         // pause(); // Used for testing purposes, prevents the program from terminating
     }
 }
+
+/*
+File is now locked for reading
+*/

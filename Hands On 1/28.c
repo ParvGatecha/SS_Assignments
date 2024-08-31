@@ -1,5 +1,6 @@
-// Pipariya Darshitkumar
-// MT2022035
+/*
+Parv Ketanbhai Gatecha
+MT2024108
 
 /*
 Write a program to get maximum and minimum real time priority.

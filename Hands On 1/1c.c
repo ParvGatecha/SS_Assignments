@@ -13,7 +13,7 @@ c. FIFO (mkfifo Library Function or mknod system call)
 #include <stdio.h>
 
 int main() {
-    int status = mknod("file", S_IFIFO | 0666, 0);
+    int status = mknod("file", __S_IFIFO | 0666, 0);
     if (status == 0) {
         printf("FIFO created successfully.\n");
     } else {

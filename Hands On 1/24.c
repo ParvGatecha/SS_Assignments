@@ -8,6 +8,7 @@ MT2024108
 #include<unistd.h>
 #include<stdio.h>
 #include<sys/types.h>
+
 int main(){
     int pid;
     pid=fork();

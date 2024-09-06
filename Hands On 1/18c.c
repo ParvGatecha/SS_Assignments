@@ -18,7 +18,7 @@ int main()
     int fd = open("18txt.txt", O_RDWR);
     int id, ticket;
     char name[12];
-    struct flock rdlock = {F_WRLCK, SEEK_SET, 0, 34, getpid()};
+    struct flock rdlock = {F_WRLCK, SEEK_SET, 0, 17, getpid()};
     int i;
     printf("Enter record id:");
     scanf("%d", &i);
@@ -54,7 +54,7 @@ int main()
     sprintf(buf, "id=%dticket_no=%d", id, ticket);
     write(fd, &buf, sizeof(buf));
     getchar();
-    rdlock.l_type = F_ULOCK;
+    rdlock.l_type = F_UNLCK;
     fcntl(fd, F_SETLKW, &rdlock);
     printf("record is unlocked\n");
     return 0;

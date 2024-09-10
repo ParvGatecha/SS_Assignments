@@ -1,7 +1,7 @@
 /*
 ============================================================================
-Name : 1a.c.c
-Author : Parv Gatecha
+Name : 1a.c
+Author : Parv Gatecha (MT2024108)
 Description : Write a separate program (for each time domain) to set a interval timer in 10sec and
                 10micro second
                 a. ITIMER_REAL
@@ -48,7 +48,7 @@ int main() {
 
 /*
 ============================================================================
-Command line: cc 1a.c &&./a.out
+Command line: cc 1a.c && ./a.out
 Output: 
 Timer expired (ITIMER_REAL)
 Timer expired (ITIMER_REAL)

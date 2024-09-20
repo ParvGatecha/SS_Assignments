@@ -26,7 +26,9 @@ void handle_sigint(int sig) {
 
 int main() {
     // Register the signal handler for SIGINT
-    signal(SIGINT, handle_sigint);
+    if(signal(SIGINT, handle_sigint) == SIG_ERR){
+        printf("Error in setting sig");
+    }
 
     // Infinite loop to keep the program running until interrupted
     while (1);

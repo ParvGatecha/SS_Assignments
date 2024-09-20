@@ -38,7 +38,7 @@ int main() {
 }
 /*
 ============================================================================
-Command line: cc 9.c && ./a.out
+Command line: cc 10b.c && ./a.out
 Output: 
 ^CCaught SIGINT: Interrupt from keyboard (Ctrl+C)
 ============================================================================

@@ -12,7 +12,7 @@ a. execl
 int main()
 {
     char *path = "/bin/ls";
-    execl(path, path, "-Rl", NULL);
+    execl(path, "ls", "-Rl", NULL);
     return 0;
 }
 /*

@@ -16,10 +16,7 @@ void hide_input(char *buffer, int size);
 
 void cleanupSemaphore();
 void setupSignalHandlers();
-sem_t *initializeSemaphore(int accountNumber);
 
-sem_t *sema;
-char semName[50];
 int socketFileDescriptor;
 
 void main()

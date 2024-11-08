@@ -24,7 +24,7 @@ int main() {
         return 1;
     }
 
-    // Step 2: Fork a process (optional for demonstration, single process can also use pipe)
+    // Step 2: Fork a process
     pid = fork();
 
     if (pid < 0) {

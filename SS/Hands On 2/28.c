@@ -39,7 +39,7 @@ int main() {
 
     // Modify the permissions
     // Example: Set permissions to 0644 (owner can read/write, others can read)
-    mq_ds.msg_perm.mode = 6666 | IPC_CREAT | IPC_EXCL;
+    mq_ds.msg_perm.mode = 0666 | IPC_CREAT | IPC_EXCL;
 
     // Set the new attributes of the message queue
     if (msgctl(msgid, IPC_SET, &mq_ds) == -1) {

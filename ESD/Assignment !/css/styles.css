@@ -1,0 +1,71 @@
+*{
+    user-select: none;
+}
+body {
+    font-family: 'Montserrat-Black';
+}
+
+#title {
+    background-size: cover;
+    background-position: center;
+    background-image: url('/image.jpg');
+}
+
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.order-button {
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .order-button:hover {
+    background-color: #aa0237; /* Darken button color on hover */
+  }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(28, 5, 5, 0.901);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #aa0237;
+    cursor: pointer;
+}
+
+.navbar-brand{
+    font-size: 2.5rem;
+}
+.container-fluid {
+    padding: 3% 15%;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Montserrat-Black', sans-serif;
+}
+.row{
+    font-family: 'Montserrat-Black', sans-serif;
+    padding: 5% 2% 5% 2%;
+}
+.nav-link {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1028px) {
+    .title {
+        text-align: center;
+    }
+    .title-img {
+        position: static;
+        width: 40%;
+        transform: rotate(10deg);
+    }
+}

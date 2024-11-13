@@ -31,4 +31,13 @@ public class Customer {
 
     @Column(name = "access_token", unique = true)
     private String accessToken;
+
+    @Column(name = "address", unique = true)
+    private String address;
+
+    @Column(name = "city", unique = true)
+    private String city;
+
+    @Column(name = "pincode", unique = true)
+    private int pincode;
 }

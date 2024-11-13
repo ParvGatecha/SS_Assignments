@@ -3,9 +3,10 @@ package com.parvgatecha.esdfirstapp.helper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class RequestInterceptor implements HandlerInterceptor {
@@ -14,7 +15,6 @@ public class RequestInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String authorizationHeader = request.getHeader("Authorization");
-
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return false;
@@ -22,6 +22,8 @@ public class RequestInterceptor implements HandlerInterceptor {
 
         String token = authorizationHeader.substring(7); // Extract token from "Bearer {token}"
         String username = jwtUtil.extractUsername(token);
+        System.out.println(token);
+        System.out.println(username);
 
         if (username == null || !jwtUtil.validateToken(token, username)) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

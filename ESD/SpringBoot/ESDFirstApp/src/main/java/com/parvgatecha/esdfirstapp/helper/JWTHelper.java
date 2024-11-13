@@ -18,6 +18,7 @@ public class JWTHelper {
 
     // Extract username from the token
     public String extractUsername(String token) {
+
         return extractClaim(token, Claims::getSubject);
     }
 
@@ -29,14 +30,15 @@ public class JWTHelper {
     // Extract claims
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
+
         return claimsResolver.apply(claims);
     }
 
     // Extract all claims
         private Claims extractAllClaims(String token) {
-            Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+            System.out.println(token);
             return Jwts.parser()
-                    .setSigningKey(key).build()
+                    .setSigningKey(SECRET_KEY).build()
                     .parseClaimsJws(token)
                     .getBody();
         }
@@ -55,7 +57,7 @@ public class JWTHelper {
     // Create token with claims
     private String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60)) // Token valid for 10 hours
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // Token valid for 10 hours
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
     }
 

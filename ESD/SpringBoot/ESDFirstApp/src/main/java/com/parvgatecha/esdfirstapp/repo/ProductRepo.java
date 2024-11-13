@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ProductRepo extends JpaRepository<Product, Long> {
 
-    @Query("Select p.name from Product p where p.price between 15 and 30 order by p.price limit 2")
-    List<Product> GetProducts();
+    @Query("SELECT p FROM Product p WHERE p.price BETWEEN 15 AND 30 ORDER BY p.price")
+    List<Product> findTop2ByPriceBetweenOrderByPriceAsc();
+
+
 }

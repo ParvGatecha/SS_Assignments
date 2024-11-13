@@ -2,14 +2,11 @@ package com.parvgatecha.esdfirstapp.controller;
 
 import com.parvgatecha.esdfirstapp.dto.CustomerRequest;
 import com.parvgatecha.esdfirstapp.dto.CustomerResponse;
-import com.parvgatecha.esdfirstapp.entity.Product;
 import com.parvgatecha.esdfirstapp.service.CustomerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/customers")
@@ -29,7 +26,7 @@ public class CustomerController {
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts(){
+    public ResponseEntity<String> getProducts(){
         return ResponseEntity.ok(customerService.getProductsWithPriceRange());
     }
 }

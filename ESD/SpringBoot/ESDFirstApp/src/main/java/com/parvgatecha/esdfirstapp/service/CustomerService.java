@@ -57,7 +57,12 @@ public class CustomerService {
     @Autowired
     private ProductRepo productRepo;
 
-    public List<Product> getProductsWithPriceRange() {
-        return productRepo.GetProducts();
+    public String getProductsWithPriceRange() {
+        List<Product> products = productRepo.findTop2ByPriceBetweenOrderByPriceAsc();
+        StringBuilder pro = new StringBuilder();
+        for(Product product : products) {
+            pro.append(product.getName()).append(",");
+        }
+        return pro.toString();
     }
 }

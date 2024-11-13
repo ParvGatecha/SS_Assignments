@@ -2,13 +2,13 @@
     user-select: none;
 }
 body {
-    font-family: 'Montserrat-Black';
+    /* font-family: 'Montserrat-Black'; */
 }
 
 #title {
     background-size: cover;
     background-position: center;
-    background-image: url('/image.jpg');
+    background-image: url('../Assests/background.jpg');
 }
 
 
@@ -17,7 +17,7 @@ body {
 }
 
 
-.order-button {
+.order-button,.btn {
     border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -32,11 +32,11 @@ body {
   }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(28, 5, 5, 0.901);
+    color: rgb(193, 181, 181);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: #aa0237;
+    color: rgb(100, 86, 86);
     cursor: pointer;
 }
 
@@ -68,4 +68,52 @@ h1 {
         width: 40%;
         transform: rotate(10deg);
     }
+}
+
+::placeholder{
+    color: white !important;
+    opacity: 0.8 !important ;
+}
+input{
+    border: 1px solid white !important;
+}
+input:focus{
+    background: transparent !important;
+    border: 1px solid white !important;
+    outline: none;
+    
+}
+.background-login {
+    background-image: url("../Assests/loginimage.jpeg");
+    background-position: center;
+    background-size: cover;
+    
+  }
+
+  .bg-glass {
+    background: transparent;
+    backdrop-filter:blur(10px);
+  }
+
+.food-box {
+    border-radius: 8px;
+}
+
+.food-box-header {
+    background-image: radial-gradient(circle, #f9a825, #ffeb99);
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+}
+
+.food-image {
+    /* width: 130%; */
+    position: relative;
+    /* left:-15%; */
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    margin-bottom: 15px;
 }

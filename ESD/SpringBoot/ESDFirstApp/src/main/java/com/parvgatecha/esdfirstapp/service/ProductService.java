@@ -45,4 +45,12 @@ public class ProductService {
         return "Product deleted";
     }
 
+    public String getProductsWithPriceRange(String low, String high) {
+        List<Product> products = productRepo.findTop2ByPriceBetweenOrderByPriceAsc(low,high);
+        StringBuilder pro = new StringBuilder();
+        for(Product product : products) {
+            pro.append(product.getName()).append(",");
+        }
+        return pro.toString();
+    }
 }

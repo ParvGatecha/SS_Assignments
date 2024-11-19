@@ -54,15 +54,4 @@ public class CustomerService {
         return jwtHelper.generateToken(request.email());
     }
 
-    @Autowired
-    private ProductRepo productRepo;
-
-    public String getProductsWithPriceRange() {
-        List<Product> products = productRepo.findTop2ByPriceBetweenOrderByPriceAsc();
-        StringBuilder pro = new StringBuilder();
-        for(Product product : products) {
-            pro.append(product.getName()).append(",");
-        }
-        return pro.toString();
-    }
 }

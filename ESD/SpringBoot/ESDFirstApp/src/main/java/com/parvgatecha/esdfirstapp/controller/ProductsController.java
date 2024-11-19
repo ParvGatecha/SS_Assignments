@@ -20,6 +20,11 @@ public class ProductsController {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 
+    @GetMapping("/products/{low}/{high}")
+    public ResponseEntity<String> getProducts(@PathVariable String low, @PathVariable String high) {
+        return ResponseEntity.ok(productService.getProductsWithPriceRange(low,high));
+    }
+
     @PostMapping
     public ResponseEntity<String> addProduct(@RequestBody ProductRequest product) {
         return ResponseEntity.ok(productService.addProduct(product));

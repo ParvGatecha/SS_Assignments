@@ -25,8 +25,5 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.createCustomer(request));
     }
 
-    @GetMapping("/products")
-    public ResponseEntity<String> getProducts(){
-        return ResponseEntity.ok(customerService.getProductsWithPriceRange());
-    }
+
 }
